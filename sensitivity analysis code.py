@@ -9,7 +9,7 @@ data_path = "data.csv"
 data = pd.read_csv(data_path)
 
 # y, d, X
-y_col = 'relilience'
+y_col = 'resilience'
 d_col = 'digital'
 X_cols = ['age', 'age_sq', 'edu', 'farmtime', 'health', 'party', 'labor', 
           'plant_demons', 'farmland_area', 'consolidation', 'certification', 
