@@ -1,15 +1,10 @@
-use "D:\文档\2、李琳论文\3CXRH\2.Digi-Res\★投稿\4.Empirical Economics\Major Revision-2nd\data.dta"
-*************************************************************************************
 clear
-use "C:\Users\LENOVO\Desktop\lin\data.dta"
+use data
 *************************************************************************************
 #delimit ;
 global controls "age age_sq edu farmtime health party labor plant_demons farmland_area consolidation certification income agtraing emtraing insurance loan water coll_economic distance capabilities drought frost credit policy technology_support" ;
 #delimit cr
 *************************************************************************************
-
-
-
 //4.1 Benchmark regression results
 *(1)~(2) OLS
 reg resilience digital
