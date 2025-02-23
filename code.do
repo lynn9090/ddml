@@ -8,11 +8,11 @@ global controls "age age_sq edu farmtime health party labor plant_demons farmlan
 
 //4.1 Benchmark regression results
 *(1)~(2) OLS
-reg relilience digital
-reg relilience digital $controls
+reg resilience digital
+reg resilience digital $controls
 *(3)~(7) use Python.
 *(8)ensemble
-global Y relilience
+global Y resilience
 global D digital
 global X $controls
 set seed 42
