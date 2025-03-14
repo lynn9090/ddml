@@ -7,6 +7,7 @@ from sklearn.linear_model import Ridge
 from sklearn.linear_model import LassoCV
 from sklearn.preprocessing import StandardScaler
 from sklearn.pipeline import make_pipeline
+from sklearn.metrics import mean_squared_error
 import doubleml as dml
 
 file_path = r"C:\Users\lenovo\Desktop\12699\data.csv" 
@@ -61,3 +62,18 @@ dml_obj.sensitivity_analysis(cf_y=0.04, cf_d=0.03)
 print(dml_obj.sensitivity_summary)  
 
 dml_obj.sensitivity_plot()
+
+
+1. n_folds=5, n_rep=1
+pred_dict = dml_obj.predictions
+ml_l = np.squeeze(pred_dict['ml_l'])
+predictions = ml_l
+mse = mean_squared_error(data[y_col], ml_l)
+print(f'Mean Squared Error (MSE): {mse}')
+
+2. n_folds=5, n_rep=2
+pred_dict = dml_obj.predictions
+ml_l = np.mean(np.squeeze(pred_dict['ml_l']), axis=1)
+predictions = ml_l
+mse = mean_squared_error(data[y_col], ml_l)
+print(f'Mean Squared Error (MSE): {mse}')
